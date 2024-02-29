@@ -8,6 +8,9 @@ DEVICE_PATH := device/xiaomi/yunluo
 KERNEL_PATH := device/xiaomi/yunluo-kernel
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -206,6 +209,24 @@ WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
 WIFI_DRIVER_FW_PATH_STA := "STA"
 WIFI_DRIVER_FW_PATH_AP := "AP"
 WIFI_DRIVER_FW_PATH_P2P := "P2P"
+
+#TWRP configs
+TW_THEME := portrait_hdpi
+TW_EXTRA_LANGUAGES := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_DEVICE_VERSION := ArpitXLR
+TW_USE_TOOLBOX := true
+TW_INCLUDE_REPACKTOOLS := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+TARGET_USES_MKE2FS := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+TW_INCLUDE_FASTBOOTD := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP := true
+TW_EXCLUDE_TWRPAPP := true
+
 WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wmtWifi"
 WIFI_DRIVER_STATE_ON := "1"
 WIFI_DRIVER_STATE_OFF := "0"
